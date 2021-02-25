@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+
+// Material Core
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes
+$mikeambro-primary: mat-palette($mat-orange);
+$mikeambro-accent: mat-palette($mat-blue-grey, 300, 100, 500);
+$mikeambro-warn: mat-palette($mat-red);
+
+// Create the theme object.
+$mikeambro-theme: mat-light-theme((
+  color: (
+    primary: $mikeambro-primary,
+    accent:  $mikeambro-accent,
+    warn:    $mikeambro-warn,
+  )
+));
+
+// Include theme styles
+@include angular-material-theme($mikeambro-theme);
+
+// Define typography
+$mikeambro-typography: mat-typography-config(
+  $font-family: 'Quicksand, sans-serif',
+  $display-4:     mat-typography-level(112px, 112px, 500, 'Montserrat, sans-serif'),
+  $headline:      mat-typography-level(24px, 32px, 500, 'Montserrat, sans-serif'),
+  $title:         mat-typography-level(20px, 32px, 500),
+  $subheading-2:  mat-typography-level(16px, 28px, 400),
+  $subheading-1:  mat-typography-level(15px, 24px, 400),
+  $body-2:        mat-typography-level(14px, 24px, 500),
+  $body-1:        mat-typography-level(14px, 20px, 400),
+  $caption:       mat-typography-level(12px, 20px, 400),
+  $button:        mat-typography-level(14px, 14px, 500),
+  $input:         mat-typography-level(inherit, 1.125, 400)
+);
+
+// Overrid typography
+@include angular-material-typography($mikeambro-typography);
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+}
