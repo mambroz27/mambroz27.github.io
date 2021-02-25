@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContainerComponent } from './container/container.component';
-import { AsteroidsComponent } from './asteroids/asteroids.component';
+
+import { GamesRoutingModule } from './games-routing.module';
+import { DiceRollerComponent } from './dice-roller/dice-roller.component';
+import { GameAsteroidsComponent } from './game-asteroids/game-asteroids.component';
 
 
 
 @NgModule({
-  declarations: [ContainerComponent, AsteroidsComponent],
+  declarations: [ContainerComponent, DiceRollerComponent, GameAsteroidsComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    GamesRoutingModule
   ]
 })
 export class GamesModule { }

@@ -1,1 +1,7 @@
-<p>container works!</p>
+<div class="game-container">
+  <app-dice-roller *ngIf="game === null; else gameOutlet"></app-dice-roller>
+</div>
+
+<ng-template #gameOutlet>
+  <router-outlet></router-outlet>
+</ng-template>
