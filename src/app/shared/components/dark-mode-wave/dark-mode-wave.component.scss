@@ -1,6 +1,6 @@
 @import '~@angular/material/theming';
 
-$shadow-color: mat-color($mat-grey, 800);
+$shadow-color: mat-color($mat-grey, 900);
 
 .wave {
   border-radius: 100%;
@@ -9,7 +9,7 @@ $shadow-color: mat-color($mat-grey, 800);
   position: absolute;
   right: 10px;
   top: 10px;
-  transition: box-shadow .3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition: box-shadow .4s cubic-bezier(0.4, 0.0, 0.2, 1);
   width: 2px;
   z-index: -1;
 

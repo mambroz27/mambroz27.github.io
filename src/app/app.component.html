@@ -1,5 +1,5 @@
 <app-dark-mode-toggle></app-dark-mode-toggle>
-<div class="wrapper">
+<div class="wrapper" [class.dark-mode]="darkMode">
   <router-outlet></router-outlet>
 </div>
 <app-dark-mode-wave></app-dark-mode-wave>

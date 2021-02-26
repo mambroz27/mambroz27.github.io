@@ -18,6 +18,14 @@ $mikeambro-theme: mat-light-theme((
   )
 ));
 
+$mikeambro-dark-theme: mat-dark-theme((
+  color: (
+    primary: $mikeambro-primary,
+    accent: $mikeambro-accent,
+    warn: $mikeambro-warn
+  )
+));
+
 // Include theme styles
 @include angular-material-theme($mikeambro-theme);
 
@@ -46,6 +54,13 @@ body {
 }
 
 body {
+  color: mat-color($mat-grey, 800);
   font-family: 'Quicksand', sans-serif;
   margin: 0;
+}
+
+.dark-mode {
+  @include angular-material-theme($mikeambro-dark-theme);
+
+  color: mat-color($mat-grey, 100);
 }
