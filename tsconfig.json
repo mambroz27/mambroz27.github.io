@@ -22,7 +22,8 @@
     ],
     "paths": {
       "@environments/*": ["src/environments/*"],
-      "@material/*": ["src/material/*"]
+      "@material/*": ["src/material/*"],
+      "@shared/*": ["src/shared/*"]
     }
   },
   "angularCompilerOptions": {
