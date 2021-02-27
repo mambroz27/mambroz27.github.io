@@ -1,3 +1,5 @@
+@use 'dark-mode';
+
 @import '~@angular/material/theming';
 
 // Material Core
@@ -62,5 +64,5 @@ body {
 .dark-mode {
   @include angular-material-theme($mikeambro-dark-theme);
 
-  color: mat-color($mat-grey, 100);
+  color: dark-mode.$text-color;
 }
