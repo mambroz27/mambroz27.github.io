@@ -1,4 +1,4 @@
-@use 'dark-mode';
+@use 'dark-mode' as d;
 
 @import '~@angular/material/theming';
 
@@ -8,7 +8,7 @@
 
 // Define the palettes
 $mikeambro-primary: mat-palette($mat-orange);
-$mikeambro-accent: mat-palette($mat-blue-grey, 300, 100, 500);
+$mikeambro-accent: mat-palette($mat-cyan, 300, 100, 500);
 $mikeambro-warn: mat-palette($mat-red);
 
 // Create the theme object.
@@ -56,7 +56,8 @@ body {
 }
 
 body {
-  color: mat-color($mat-grey, 800);
+  background-color: d.$light-bg;
+  color: d.$light-text;
   font-family: 'Quicksand', sans-serif;
   margin: 0;
 }
@@ -64,5 +65,5 @@ body {
 .dark-mode {
   @include angular-material-theme($mikeambro-dark-theme);
 
-  color: dark-mode.$text-color;
+  color: d.$dark-text;
 }

@@ -1,5 +1,7 @@
-button {
-  position: fixed;
-  right: 10px;
-  top: 10px;
-}
+@use 'sass:color';
+@use 'dark-mode' as d;
+
+@import '~@angular/material/theming';
+
+$light-color: lighten(d.$dark-bg, 75);
+$dark-color: lighten(d.$dark-bg, 25);

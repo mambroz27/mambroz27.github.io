@@ -1,1 +1,5 @@
-<button (click)="toggle()">{{mode}}</button>
+<button
+  class="toggle"
+  [class.on]="mode"
+  (click)="toggle">
+</button>

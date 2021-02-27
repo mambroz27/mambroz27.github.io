@@ -1,20 +1,20 @@
-@use 'dark-mode';
+@use 'dark-mode' as d;
 
 @import '~@angular/material/theming';
 
 .wave {
-  @include dark-mode.transition('box-shadow');
+  @include d.transition('box-shadow');
   border-radius: 100%;
-  box-shadow: 0 0 0 0 dark-mode.$shadow-color;
+  box-shadow: 0 0 0 0 d.$dark-bg;
   height: 2px;
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: d.$toggle-position + d.$toggle-width / 2;
+  top: d.$toggle-position + d.$toggle-height / 2;
   width: 2px;
   z-index: -1;
 
   &.active {
-    background: dark-mode.$shadow-color;
-    box-shadow: 0 0 0 9999px dark-mode.$shadow-color;
+    background: d.$dark-bg;
+    box-shadow: 0 0 0 9999px d.$dark-bg;
   }
 }
