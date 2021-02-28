@@ -15,10 +15,6 @@ $toggle-size: 48px;
   @each $p in $properties {
     $i: index($properties, $p);
     $t: append($t, '#{$p} .4s cubic-bezier(0.4, 0.0, 0.2, 1)', comma);
-
-    // @if $i < length($properties) {
-    //   $t: append(', ');
-    // }
   }
 
   transition: #{$t};
