@@ -3,5 +3,95 @@
 
 @import '~@angular/material/theming';
 
-$light-color: lighten(d.$dark-bg, 75);
-$dark-color: lighten(d.$dark-bg, 25);
+$light-color: lighten(d.$dark-bg, 80);
+$dark-color: lighten(d.$dark-bg, 20);
+
+.toggle {
+  @include d.transition(('background-color'));
+  align-items: center;
+  background-color: $light-color;
+  border-radius: 100%;
+  display: flex;
+  height: d.$toggle-size;
+  justify-content: center;
+  position: fixed;
+  right: d.$toggle-position;
+  top: d.$toggle-position;
+  width: d.$toggle-size;
+
+  .icon {
+    @include d.transition(('box-shadow', 'color', 'width', 'height'));
+    border: 3px solid currentColor;
+    border-radius: 100%;
+    box-shadow:
+      -14px 0 0 -6px currentColor,
+      14px 0 0 -6px currentColor,
+      0 -14px 0 -6px currentColor,
+      0 14px 0 -6px currentColor,
+      -10px -10px 0 -6px currentColor,
+      -10px 10px 0 -6px currentColor,
+      10px -10px 0 -6px currentColor,
+      10px 10px 0 -6px currentColor;
+    color: d.$light-text;
+    height: d.$toggle-size / 3 - 6px;
+    overflow: hidden;
+    position: relative;
+    width: d.$toggle-size / 3 - 6px;
+
+    &::before {
+      @include d.transition(('height', 'width'));
+      background-color: $dark-color;
+      border: 0 solid currentColor;
+      border-radius: 100%;
+      bottom: d.$toggle-size / 10;
+      content: '';
+      display: block;
+      height: 0;
+      position: absolute;
+      left: d.$toggle-size / 8;
+      width: 0;
+    }
+  }
+
+  .moon {
+    @include d.transition(('height', 'width', 'background-color'));
+    background-color: $light-color;
+    border-radius: 100%;
+    height: 0;
+    position: absolute;
+    right: d.$toggle-size / 4;
+    top: d.$toggle-size / 4 + 1px;
+    width: 0;
+  }
+
+  &.on {
+    background-color: $dark-color;
+
+    .icon {
+      box-shadow:
+        0 0 0 -6px currentColor,
+        0 0 0 -6px currentColor,
+        0 0 0 -6px currentColor,
+        0 0 0 -6px currentColor,
+        0 0 0 -6px currentColor,
+        0 0 0 -6px currentColor,
+        0 0 0 -6px currentColor,
+        0 0 0 -6px currentColor;
+      color: d.$dark-text;
+      height: d.$toggle-size / 2 - 6px;
+      width: d.$toggle-size / 2 - 6px;
+
+      &::before {
+        border: 3px solid currentColor;
+        height: d.$toggle-size / 4;
+        width: d.$toggle-size / 4;
+      }
+    }
+
+    .moon {
+      background-color: $dark-color;
+      height: d.$toggle-size / 4;
+      width: d.$toggle-size / 4;
+    }
+  }
+}

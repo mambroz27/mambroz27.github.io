@@ -6,11 +6,20 @@ $dark-text: mat-color($mat-grey, 100);
 $light-bg: mat-color($mat-grey, 50);
 $light-text: mat-color($mat-grey, 800);
 
-$toggle-border: 2px;
-$toggle-height: 28px;
 $toggle-position: 20px;
-$toggle-width: 42px;
+$toggle-size: 48px;
 
 @mixin transition($properties) {
-  transition: #{$properties} .4s cubic-bezier(0.4, 0.0, 0.2, 1);
+  $t: ();
+
+  @each $p in $properties {
+    $i: index($properties, $p);
+    $t: append($t, '#{$p} .4s cubic-bezier(0.4, 0.0, 0.2, 1)', comma);
+
+    // @if $i < length($properties) {
+    //   $t: append(', ');
+    // }
+  }
+
+  transition: #{$t};
 }

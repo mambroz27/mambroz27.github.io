@@ -3,18 +3,18 @@
 @import '~@angular/material/theming';
 
 .wave {
-  @include d.transition('box-shadow');
+  @include d.transition(('box-shadow'));
   border-radius: 100%;
   box-shadow: 0 0 0 0 d.$dark-bg;
   height: 2px;
   position: absolute;
-  right: d.$toggle-position + d.$toggle-width / 2;
-  top: d.$toggle-position + d.$toggle-height / 2;
+  right: d.$toggle-position + d.$toggle-size / 2;
+  top: d.$toggle-position + d.$toggle-size / 2;
   width: 2px;
   z-index: -1;
 
   &.active {
-    background: d.$dark-bg;
+    background-color: d.$dark-bg;
     box-shadow: 0 0 0 9999px d.$dark-bg;
   }
 }
