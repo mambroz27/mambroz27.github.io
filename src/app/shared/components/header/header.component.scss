@@ -1,0 +1,13 @@
+@use 'dark-mode' as d;
+
+.header {
+  align-items: center;
+  display: flex;
+  height: 48px;
+  padding: 20px calc(#{d.$toggle-size} + 20px * 2) 20px 20px;
+
+  h1 {
+    font-family: 'Montserrat', 'sans-serif';
+    margin: 0;
+  }
+}
